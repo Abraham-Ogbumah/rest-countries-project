@@ -1,13 +1,159 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+body {
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+}
+
+.c-padding {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.app {
+  display: grid;
+  gap: 20px;
+  grid-template-areas: "header" "search" "country";
+}
+
+
+/* This defines the header styles */
+.header-container {
+  grid-area: header;
+  height: 60px;
+  background-color: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center-items {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.themeSwitcher {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: .8rem;
+}
+
+.searchAndFilter {
+    height: 8rem;
+}
+
+.searchArea {
+  grid-area: search;
+}
+
+.search {
+ margin-bottom: 0.8rem;
+}
+
+/* This is the country list section*/
+.countries {
+  grid-area: country;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.card-container {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.card > img {
+  width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    padding: 0.6rem 1.8rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #AAAAAA;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px #aaaaaa;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.left-arrow {
+    margin-right: 5px;
+}
+
+.border-list {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.sec-btn {
+    padding: 0.7rem 1.3rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    text-decoration: none;
+    color: #AAAAAA;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px #aaaaaa;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+@media (min-width: 735px) {
+  .searchAndFilter {
+    display: flex;
+    height: 4rem;
+    justify-content: space-between;
+    /* align-items: center; */
+  }
+
+  .search {
+    width: 60%;
+    max-width: 350px;
+  }
+
+  .filter-container {
+    max-width: 300px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+  } 
 }

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Countries Details",
+  "name": "Create Countries Details using REST API",
   "icons": [
     {
       "src": "favicon.ico",
