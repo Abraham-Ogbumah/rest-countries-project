@@ -16,25 +16,33 @@ function Detail() {
             </div>
 
             <div className="countries center-items">
-                <div className='detail-img'>
-                    <img src={ax} alt='country flag'/>
-                </div> 
                 <div className='detail-container'>
-                    <div className='country-info'>
-                        <div className='info-header'>
-                            <h2>Belgium</h2>
+                    <div className='detail-img'>
+                        <img src={ax} alt='country flag'/>
+                    </div> 
+                    <div className='detail-content'>
+                        <div className='country-info'>
+                            <div className='info-header'>
+                                <h2>Belgium</h2>
+                                <p>Population: 11,319,511</p>
+                                <p>Region: Europe</p>
+                                <p>Sub Region: Western Europe</p>
+                                <p>Capital: Brussels</p>
+                            </div>
+                            <div className='country-info-secondary'>
+                                <p>Top Level Domain: be</p>
+                                <p>Currencies: Euro</p>
+                                <p>Languages: Dutch, French, German</p>
+                            </div>    
                         </div>
-                        <div className='country-info-secondary'>
-                           
-                        </div>    
-                    </div>
 
-                    <div className='other-info'>
-                        <h3>Border Countries:</h3>
-                        <div className='border-list'>
-                            <Button />
-                            <Button />
-                            <Button />
+                        <div className='other-info'>
+                            <h3>Border Countries:</h3>
+                            <div className='border-list'>
+                                <Button />
+                                <Button />
+                                <Button />
+                            </div>
                         </div>
                     </div>
                 </div>
