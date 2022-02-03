@@ -1,6 +1,6 @@
 import React from "react"
-import SearchBar from "./Search/SearchBar"
-import Filter from "./Filter/Filter"
+import SearchBar from "../Search/SearchBar"
+import Filter from "../Filter/Filter"
 
 function SearchAndFilter() {
     return (
