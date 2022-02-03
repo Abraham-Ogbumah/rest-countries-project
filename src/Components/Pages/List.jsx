@@ -1,8 +1,11 @@
 import React from 'react'
-import SearchAndFilter from '../SearchAndFilter'
-import Card from '../Card'
+import SearchAndFilter from './SearchAndFilter'
+import Card from './Card'
 
 function List() {
+
+    const countries = Array(20).fill(0)
+
     return (
         <>
             <div className="searchArea center-items">
@@ -12,16 +15,7 @@ function List() {
 
             <div className="countries center-items">
                 <div className="card-container">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                     {countries.map(() => <Card />)}
                 </div>
             </div>
         </>
