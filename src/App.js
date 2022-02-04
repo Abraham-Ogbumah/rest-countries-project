@@ -6,19 +6,6 @@ import getCountries from "./services/countriesApi";
 
 function App() {
 
-  const [country, setCountry] = useState([]);
-
-useEffect(() => {
-  let mounted = true;
-  getCountries()
-    .then(items => {
-      if(mounted) {
-        setCountry(items)
-      }
-    })
-    return () => mounted = false;
-}, [])
-
   return (
     <main className="app">
         <div className="header-container">

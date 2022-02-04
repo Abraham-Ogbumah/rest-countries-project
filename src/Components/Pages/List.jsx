@@ -2,7 +2,7 @@ import React from 'react'
 import SearchAndFilter from './SearchAndFilter'
 import Card from './Card'
 
-function List() {
+function List({infoToList}) {
 
     const countries = Array(20).fill(0)
 
@@ -15,8 +15,14 @@ function List() {
 
             <div className="countries center-items">
                 <div className="card-container">
-                     {countries.map(() => <Card />)}
+                     {countries.map(() => <Card 
+                         country="Belgium"
+                         population={11.23}
+                         region="Germany"
+                         capital="brussel"
+                     />)}
                 </div>
+                {infoToList}
             </div>
         </>
         
