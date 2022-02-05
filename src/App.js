@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from "react";
-import Header from "./Components/Pages/Header";
-import List from "./Components/Pages/List";
-import getCountries from "./services/countriesApi";
-// import Detail from "./Components/Pages/Detail";
+import React, { Suspense } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "./routes";
+import Layout from "./components/Layout";
 
 function App() {
-
   return (
-    <main className="app">
-        <div className="header-container">
-            <Header />
-        </div> 
-
-       <List />
-       {/* <Detail /> */}
-       
-    </main>
+    <Router>
+        <div className="app">
+            <Layout>
+              <Suspense fallback={<h1>Loading</h1>}>
+                <Routes />
+              </Suspense>
+            </Layout>
+        </div>
+    </Router>  
   );
 }
 
