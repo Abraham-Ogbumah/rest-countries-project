@@ -8,3 +8,16 @@ export const getCountries = async() => {
     const res = await fetch('https://restcountries.com/v2/all');
     return res.json()
 };
+
+  // const [countryInfo, setCountryInfo] = useState([]);
+
+  // useEffect(() => {
+  //   let mounted = true;
+  //   getCountries()
+  //     .then(items => {
+  //       if(mounted) {
+  //         setCountryInfo(items)
+  //       }
+  //     })
+  //     return () => mounted = false;
+  // }, [])
