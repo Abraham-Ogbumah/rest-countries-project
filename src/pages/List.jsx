@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import SearchAndFilter from '../components/SearchAndFilter'
 import Card from '../components/Card'
+import { getCountries } from "../services/countriesApi"
 
 function List() {
 
     const countries = [1,2,3,4,5,6]
+
+    const [country, setCountryInfo] = useState([]);
+
+    useEffect(() => {
+      let mounted = true;
+      getCountries()
+        .then(items => {
+          if(mounted) {
+            setCountryInfo(items)
+          }
+        })
+        return () => mounted = false;
+    }, [])
+
+    console.log(country)
     
     return (
         <>
@@ -15,12 +31,12 @@ function List() {
 
             <div className="countries center-items">
                 <div className="card-container">
-                     {countries.map((x) => <Card 
-                         key={x}
-                         country="Belgium"
-                         population={11.23}
-                         region="Germany"
-                         capital="brussel"
+                     {country.map((item) => <Card 
+                         key={item.alpha2Code}
+                         country={item.name}
+                         population={item.population}
+                         region={item.region}
+                         capital={item.capital}
                      />)}
                 </div>
             </div>
