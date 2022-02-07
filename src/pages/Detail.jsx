@@ -1,8 +1,8 @@
 import React from 'react'
 import { FaArrowLeft } from "react-icons/fa"
 import './detail.css'
-import ax from "../components/ax.png"
-import Button from '../components/Utils/Button'
+import ax from "../Components/ax.png"
+import Button from '../Components/Utils/Button'
 
 function Detail() {
     return (

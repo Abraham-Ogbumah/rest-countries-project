@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import SearchAndFilter from '../components/SearchAndFilter'
-import Card from '../components/Card'
+import SearchAndFilter from '../Components/SearchAndFilter'
+import Card from '../Components/Card'
 import { getCountries } from "../services/countriesApi"
 
 function List() {
@@ -33,8 +33,9 @@ function List() {
                 <div className="card-container">
                      {country.map((item) => <Card 
                          key={item.alpha2Code}
+                         image={item.flags.png}
                          country={item.name}
-                         population={item.population}
+                         population={item.population.toLocaleString()}
                          region={item.region}
                          capital={item.capital}
                      />)}

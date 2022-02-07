@@ -1,8 +1,8 @@
 import React, { lazy } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-const Home = lazy(() => import('./pages/List'));
-const CountryDetail = lazy(() => import("./pages/Detail"));
+const Home = lazy(() => import('./Pages/List'));
+const CountryDetail = lazy(() => import("./Pages/Detail"));
 
 export const route = {
     home: "/countries",
