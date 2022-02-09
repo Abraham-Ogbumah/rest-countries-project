@@ -2,7 +2,7 @@ import React from 'react'
 import "./Searchbar.css"
 import { FaSearch } from "react-icons/fa"
 
-function SearchBar() {
+function SearchBar(props) {
     return (
         <div className='search'>
             <div className='searchInputs'>
@@ -11,7 +11,12 @@ function SearchBar() {
                         <span className='icon'><FaSearch /></span>
                     </div>
                 </div>
-                <input type="text" name="search" placeholder="Search for a Country"/>
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Search for a Country"
+                    onChange={props.handleChange}
+                />
             </div>
         </div>
     )
