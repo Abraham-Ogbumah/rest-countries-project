@@ -7,24 +7,26 @@ import { getCountries } from "../services/countriesApi"
 
 function List() {
 
-    const [country, setCountryInfo] = useState([]);
+    const [countries, setCountryInfo] = useState([]);
     const [searchInput, setSearchInput] = useState("");
     const [searchedResults, setSearchedResults] = useState([]);
 
     const searchItems = (searchValue) => {
+
         setSearchInput(searchValue)
+        console.log(searchValue)
         if (searchInput !== "") {
-            const searchedData = country.filter((item) => {
-                return Object.values(item).join("").toLowerCase().includes(searchInput.toLowerCase())
+            const searchedData = countries.filter((item) => {
+                return item.name.toLowerCase().includes(searchInput.toLowerCase())
             })
             setSearchedResults(searchedData)
         }
         else {
-            setSearchedResults(country)
+            setSearchedResults(countries)
         }
     }
 
-    // const searchedData = country.filter((item) => {
+    // const searchedData = countries.filter((item) => {
     //     return Object.values(item).join("").toLowerCase().includes(searchInput.toLowerCase())
     // })
 
@@ -39,6 +41,8 @@ function List() {
         return () => mounted = false;
     }, [])
     
+    // console.log(countries)
+
     return (
         <>
             <div className="searchArea center-items">
@@ -56,7 +60,7 @@ function List() {
                     searchedResults.map((item) => {
                         return (
                                 <Card 
-                                    key={item.alpha2Code}
+                                    key={item.name}
                                     image={item.flags.png}
                                     country={item.name}
                                     population={item.population.toLocaleString()}
@@ -67,10 +71,10 @@ function List() {
                         )
                     })
                 ) : (
-                    country.map((item) => {
+                    countries.map((item) => {
                         return (
                                 <Card 
-                                    key={item.alpha2Code}
+                                    key={`${item.alpha2Code}${item.name}`}
                                     image={item.flags.png}
                                     country={item.name}
                                     population={item.population.toLocaleString()}

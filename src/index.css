@@ -63,6 +63,10 @@ body {
  margin-bottom: 0.8rem;
 }
 
+.searchInputs > input {
+  width: 100%;
+}
+
 /* This is the country list section*/
 .countries {
   grid-area: country;
