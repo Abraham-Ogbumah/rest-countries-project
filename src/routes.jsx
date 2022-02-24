@@ -6,7 +6,7 @@ const CountryDetail = lazy(() => import("./Pages/Detail"));
 
 export const route = {
     home: "/countries",
-    country: "/country/:id"
+    country: "/country/:name"
 };
 
 const CountriesRoutes = () => {
