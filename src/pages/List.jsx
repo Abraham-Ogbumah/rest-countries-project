@@ -58,28 +58,30 @@ function List() {
                 <div className="card-container">
                 {searchInput.length > 1 ? (
                     searchedResults.map((item) => {
+                        const { numericCode, name, flags, population, region, capital } = item
                         return (
                                 <Card 
-                                    key={item.name}
-                                    image={item.flags.png}
-                                    country={item.name}
-                                    population={item.population.toLocaleString()}
-                                    region={item.region}
-                                    capital={item.capital}
+                                    key={numericCode}
+                                    image={flags.png}
+                                    country={name}
+                                    population={population.toLocaleString()}
+                                    region={region}
+                                    capital={capital}
                                 />
                            
                         )
                     })
                 ) : (
                     countries.map((item) => {
+                        const {numericCode, name, flags, population, region, capital } = item
                         return (
                                 <Card 
-                                    key={`${item.alpha2Code}${item.name}`}
-                                    image={item.flags.png}
-                                    country={item.name}
-                                    population={item.population.toLocaleString()}
-                                    region={item.region}
-                                    capital={item.capital}
+                                    key={numericCode}
+                                    image={flags.png}
+                                    country={name}
+                                    population={population.toLocaleString()}
+                                    region={region}
+                                    capital={capital}
                                 />
                         )
                     })
