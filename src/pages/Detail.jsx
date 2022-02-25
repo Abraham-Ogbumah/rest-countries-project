@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { FaArrowLeft } from "react-icons/fa"
+import { FaArrowLeft, FaBorderStyle } from "react-icons/fa"
 
 import './detail.css'
 import ax from "../Components/ax.png"
@@ -33,7 +33,7 @@ function Detail() {
             </div>
 
             {country.map((c) => {
-                const { numericCode, flags, name, region } = c
+                const { numericCode, flags, name, region, population, subregion, capital, topLevelDomain, currencies, borders, languages } = c
 
                 return (
                     <div className="countries center-items" key={numericCode}>
@@ -45,24 +45,27 @@ function Detail() {
                                 <div className='country-info'>
                                     <div className='info-header'>
                                         <h2>{name}</h2>
-                                        <p>Population: 11,319,511</p>
+                                        <p>Population: {population.toLocaleString()}</p>
                                         <p>Region: {region}</p>
-                                        <p>Sub Region: Western Europe</p>
-                                        <p>Capital: Brussels</p>
+                                        <p>Sub Region: {subregion}</p>
+                                        <p>Capital: {capital}</p>
                                     </div>
                                     <div className='country-info-secondary'>
-                                        <p>Top Level Domain: be</p>
-                                        <p>Currencies: Euro</p>
-                                        <p>Languages: Dutch, French, German</p>
+                                        <p>Top Level Domain: {topLevelDomain}</p>
+                                        <p>Currencies: {currencies[0].code}</p>
+                                        <p>Languages: {languages.map((language, ind) => {
+                                            return (
+                                                <span>{(ind ? ', ': '') + language.name}</span>
+                                            )
+                                        })}</p>
                                     </div>    
                                 </div>
 
                                 <div className='other-info'>
                                     <h3>Border Countries:</h3>
                                     <div className='border-list'>
-                                        <Button />
-                                        <Button />
-                                        <Button />
+                                            {borders ? borders.map((border) => {return (<Button name={border}/>)
+                                        }) : <Button/>} 
                                     </div>
                                 </div>
                             </div>
