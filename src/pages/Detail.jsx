@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { FaArrowLeft, FaBorderStyle } from "react-icons/fa"
+import { FaArrowLeft } from "react-icons/fa"
 
 import './detail.css'
-import ax from "../Components/ax.png"
 import Button from '../Components/Utils/Button'
 
 
@@ -17,7 +16,6 @@ function Detail() {
             const response = await fetch(`https://restcountries.com/v2/name/${name}`)
             const country = await response.json()
             setCountry(country)
-            console.log(country)
         }
         fetchCountryData()
     }, [name])
@@ -55,7 +53,7 @@ function Detail() {
                                         <p>Currencies: {currencies[0].code}</p>
                                         <p>Languages: {languages.map((language, ind) => {
                                             return (
-                                                <span>{(ind ? ', ': '') + language.name}</span>
+                                                <span key={language.name}>{(ind ? ', ': '') + language.name}</span>
                                             )
                                         })}</p>
                                     </div>    
@@ -64,7 +62,7 @@ function Detail() {
                                 <div className='other-info'>
                                     <h3>Border Countries:</h3>
                                     <div className='border-list'>
-                                            {borders ? borders.map((border) => {return (<Button name={border}/>)
+                                            {borders ? borders.map((border, ind) => {return (<Button name={border} key={border}/>)
                                         }) : <Button/>} 
                                     </div>
                                 </div>
