@@ -1,5 +1,4 @@
 import React from "react";
-// import { PageProps } from "types";
 import Header from ".//Header";
 import "../index.css"
 

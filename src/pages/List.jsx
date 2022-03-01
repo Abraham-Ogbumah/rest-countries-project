@@ -64,7 +64,7 @@ function List() {
                     searchedResults.map((item) => {
                         const { numericCode, name, flags, population, region, capital } = item
                         return (
-                            <Link to={`/country/${name}`}>
+                            <Link to={`/country/${name}`} className="route-link">
                                 <Card 
                                     key={numericCode}
                                     link={`/country/${name}`}
@@ -81,7 +81,7 @@ function List() {
                     countries.map((item) => {
                         const {numericCode, name, flags, population, region, capital } = item
                         return (
-                            <Link to={`/country/${name}`}>
+                            <Link to={`/country/${name}`} className="route-link">
                                 <Card 
                                     key={numericCode}
                                     link={`/country/${name}`}

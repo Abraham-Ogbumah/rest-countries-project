@@ -39,7 +39,7 @@ function Detail() {
                     <div className="countries center-items" key={numericCode}>
                         <div className='detail-container'>
                             <div className='detail-img'>
-                                <img src={flags.png} alt={name}/>
+                                <img src={flags.svg} alt={name}/>
                             </div> 
                             <div className='detail-content'>
                                 <div className='country-info'>
