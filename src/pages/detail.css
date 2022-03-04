@@ -23,10 +23,16 @@
 }
 
 .border-list {
-    display: flex;
-    width: 100%;
+    /* display: flex;
+    width: 100%; */
     justify-content: space-between;
-    max-width: 300px;
+    /* max-width: 300px; */
+}
+
+.sec-btn {
+    /* margin-left: 10px; */
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .detail-img {
@@ -57,8 +63,18 @@
 
 @media (min-width: 525px) {    
     .country-info {
-        display: flex;
-        gap: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "main other";
+        gap: 20px;
+    }
+
+    .info-headeer {
+        grid-area: main;
+    }
+
+    .country-info-secondary {
+        grid-area: other;
     }
 
     .country-info-secondary, .other-info {
