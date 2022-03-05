@@ -20,6 +20,12 @@ function Detail() {
         fetchCountryData()
     }, [name])
 
+    const myStyle = {
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+    }
+
     return (
         <>
             <div className="searchArea center-items">
@@ -36,8 +42,8 @@ function Detail() {
                 return (
                     <div className="countries center-items" key={numericCode}>
                         <div className='detail-container'>
-                            <div className='detail-img'>
-                                <img src={flags.svg} alt={name}/>
+                            <div className='detail-img' style={{backgroundImage: `url(${flags.svg})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+                                {/* <img src={flags.svg} alt={name}/> */}
                             </div> 
                             <div className='detail-content'>
                                 <div className='country-info'>
